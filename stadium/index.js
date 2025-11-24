@@ -8,8 +8,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const router = require("./router");
 
-const hostname = "127.0.0.1";
-const port = 3000;
+const hostname = ("RENDER" in process.env) ? "0.0.0.0":"127.0.0.1";
+const port = process.env.PORT || 5000;
 
 mongoose.set("strictQuery", true);
 mongoose
